@@ -1,0 +1,33 @@
+( Benchmarks - Jason CJ Tay - shutay at gmaildotcom )
+( Presented on 15 May 2022 )
+: .. dup . ;
+: dash 45 emit ;
+: dashes 0 DO dash LOOP ;
+
+( FP DO Bench )
+: BENCHFD MS-TICKS 200000 0 DO PI FDUP F* FDROP LOOP MS-TICKS SWAP - 1.0e S>F 1000e F/ 1/F F* F. ;
+
+( Int DO Bench )
+: BENCHID MS-TICKS 200000 0 DO 31415 DUP * 10000 / DROP LOOP MS-TICKS SWAP - 1.4e S>F 1000e F/ 1e FSWAP F/ F* F. ;
+
+( Int DO Compound Bench )
+: BENCHIC MS-TICKS 200000 0 DO 31415 DUP 10000 */ DROP LOOP MS-TICKS SWAP - 1.4e S>F 1000e F/ 1/F F* F. ;
+
+( FP For Bench )
+: BENCHFF MS-TICKS 200000 FOR PI FDUP F* FDROP NEXT MS-TICKS SWAP - 1.0e S>F 1000e F/ 1/F F* F. ;
+
+( Int For Bench )
+: BENCHIF MS-TICKS 200000 FOR 31415 DUP 10000 */ DROP NEXT MS-TICKS SWAP - 1.2e S>F 1000e F/ 1/F F* F. ;
+
+: RUNALL
+." Benchmark ESP32forth" CR
+20 dashes CR
+." FP DO:     " BENCHFD CR
+." Int DO:    " BENCHID CR
+." Int DO(C): " BENCHIC CR
+." FP For:    " BENCHFF CR
+." Int For:   " BENCHIF CR
+20 dashes CR
+." Terminado" CR ;
+
+RUNALL
