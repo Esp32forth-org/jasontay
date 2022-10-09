@@ -9,6 +9,10 @@ So far in my testing, it appears that you must use your own Slave Select (SS) pi
 Again, see the example for how you'd go about doing this, making sure to keep the pin HIGH at all times until you wish to
 read from that slave. In which case, you need to pull that SS pin LOW for the duration of the SPI transfer.
 
+The example shows the use of the Forth SPI to read temperature values from a MAX6675 thermocouple amplifier and ADC. You will need one of these modules to try out the example:
+
+![MAX6675 module](https://github.com/Esp32forth-org/jasontay/blob/main/images/MAX6675-Module.jpg)
+
 ## Forth Words for SPI
 The following words will be added:
 
@@ -31,8 +35,12 @@ SPI is a duplex protocol, you have to send something to receive something. SPItr
 ### SPItransfer16
 SPItransfer16 ( n -- n )
 
+Same as SPItransfer, but transfers 16-bit values instead.
+
 ### SPIendTransaction
 SPIendTransaction ( -- )
+
+Stop using the SPI peripheral. Normally this is called after de-asserting the chip select, to allow other libraries to use the SPI peripheral.
 
 ### SPIend
 SPIend ( -- )
