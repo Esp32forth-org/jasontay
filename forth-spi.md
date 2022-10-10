@@ -1,6 +1,8 @@
 # ESP32forth SPI Support
 The ```userwords-spi.h``` file includes a thin API layer to expose the Arduino SPI library within the Forth environment.
 
+![Arduino IDE Userwords](https://github.com/Esp32forth-org/jasontay/blob/main/images/Arduino-userwords.jpg)
+
 ## How to use
 Add the userwords into your own ```userword.h``` file in your ESP32forth Arduino project. Then have a look at ```thermocouple.forth```
 for an example of how to use it.
