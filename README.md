@@ -12,6 +12,8 @@ In addition, I include an example of its use in Forth. Don't bit-bang, use this 
 The M5Stack platform would make a perfect portable, self-powered ESP32forth platform. However, to make use of all its features, ESP32forth needs 
 some customisation. When used with the M5Stack Faces QWERTY keyboard combination, it promises the possibility of true mobility with ESP32forth.
 
+![M5Stack running ESP32forth](images/M5-QWERTY.png)
+
 ## FizzBuzz
 FizzBuzz is a simple interview algorithm challenge to figure out if your candidate can think or not... This is my take on implementing it in Forth as 
 much as a practice exercise as to learn Forth.
