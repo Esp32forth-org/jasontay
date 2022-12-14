@@ -5,6 +5,10 @@ This version is more appropriate if you have any M5Stack Core/Core2/Fire device 
 with using an M5Stack. This version does NOT depend on the Faces kit at all. Use of the display is central to this version, with much of the new Forth words
 added being for display support, however, it is not essential to enable the display to use these extensions.
 
+## Prerequisites
+You must have the M5Stack boards support added to your Arduino IDE. You can find out how to do this in
+[the official m5-docs](https://docs.m5stack.com/en/quick_start/arduino)
+
 ## Tested Models
 I have tested this software only on the M5Stack Gray device.
 
