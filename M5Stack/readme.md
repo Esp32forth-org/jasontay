@@ -7,3 +7,103 @@ added being for display support, however, it is not essential to enable the disp
 
 ## Tested Models
 I have tested this software only on the M5Stack Gray device.
+
+## Documentation
+### M5begin
+Syntax: M5begin ( -- )
+
+Initialises all the on-board peripherals and systems on an M5, this includes buttons, gyros, accelerometers, etc. It also actually initialises the LCD,
+so there is actually no need to call M5LcdBegin if you have called *M5begin*.
+
+### M5Pwrbegin
+Syntax: M5PwrBegin ( -- )
+
+Initialises on-board management.
+
+### M5BtnA
+Syntax: M5BtnA ( -- n)
+
+Reads the state of Button A (left-most button) on the M5Stack face and return the value on the stack.
+
+### M5BtnB
+Syntax: M5BtnB ( -- n)
+
+Reads the state of Button B (middle button) on the M5Stack face and return the value on the stack.
+
+### M5BtnC
+Syntax: M5BtnC ( -- n)
+
+Reads the state of Button C (right-most button) on the M5Stack face and return the value on the stack.
+
+### M5LcdBegin
+Syntax: M5LcdBegin ( -- )
+
+Activates power for and initialises only the LCD and makes it ready for use.
+
+### M5LcdSleep
+Syntax: M5LcdSleep ( -- )
+
+Puts the display into power saving mode.
+
+### M5LcdWake
+Syntax: M5LcdWake ( -- )
+
+Awakens the display from power saving mode.
+
+### M5LcdWidth
+Syntax: M5LcdWidth ( -- n)
+
+Returns the width of the display in pixels in the current rotation setting.
+
+### M5LcdHeight
+Syntax: M5LcdHeight ( -- n)
+
+Returns the height of the display in pixels in the current rotation setting.
+
+### M5SetRot
+Syntax: M5SetRot (n -- )
+
+Sets the display rotation or orientation in increments of 90 degrees, i.e., 0-3 for 0, 90, 180 and 270 clockwise and 4-7 for anticlockwise.
+Must be set before activating the display.
+
+### M5SetBrightness
+Syntax: M5SetBrightness (n -- )
+
+Sets the backlight brightness in values from 0 (fully turned off) to 255 (full brightness).
+
+### M5SetCursor
+Syntax: M5SetCursor (x y -- )
+
+Sets the current cursor position at (x, y).
+
+### M5Color
+Syntax: M5Color (red green blue -- n)
+
+Takes 3 separate byte values from 0 - 255 for each of red, green and blue channels and encodes them into a packed 16-bit RGB 5-6-5 format
+for use in the drawing commands.
+
+### M5Fill
+Syntax: M5Fill (color -- )
+
+Fills the entire display in the colour specified.
+
+### M5Pixel
+Syntax: M5Pixel (x y color -- )
+
+Draws a single pixel at location (x, y) on the LCD subject to the active display rotation settings with in the colour specified.
+
+### M5Line
+Syntax: M5Line (x1 y1 x2 y2 color -- )
+
+Draws a line from (x1, y1) to (x2, y2) in the colour specified.
+
+### M5Rect
+Syntax: M5Rect (x y w h color -- )
+
+Draws a rectangle with starting corner in (x, y) of (width, height) dimensions in the colour specified.
+
+### M5Update
+Syntax: M5Update ( -- )
+
+Runs housekeeping functions to keep all peripherals properly updated and running. Execute this word periodically to ensure the device
+UI remains responsive.
