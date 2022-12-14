@@ -10,7 +10,7 @@ You must have the M5Stack boards support added to your Arduino IDE. You can find
 [the official m5-docs](https://docs.m5stack.com/en/quick_start/arduino)
 
 ## Tested Models
-I have tested this software only on the M5Stack Gray device.
+I have tested this software only on the M5Stack Gray device with ESP32forth v7.0.6.19.
 
 ## Documentation
 ### M5begin
