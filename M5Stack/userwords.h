@@ -30,4 +30,10 @@
   Y(M5Pixel, M5.Lcd.drawPixel((int32_t)n2, (int32_t)n1, (uint32_t)n0); DROPn(3)) \
   Y(M5Line, M5.Lcd.drawLine(n4, n3, n2, n1, n0); DROPn(5)) \
   Y(M5Rect, M5.Lcd.drawRect(n4, n3, n2, n1, n0); DROPn(5)) \
+  Y(M5Print, M5.Lcd.print(c0); DROP) \
+  Y(M5DrawStr, M5.Lcd.drawString(c3, n2, n1, n0); DROPn(4)) \
+  Y(M5DrawNum, M5.Lcd.drawNumber(n2, n1, n0); DROPn(3)) \
+  Y(M5TextSize, M5.Lcd.setTextSize(n0); DROP) \
+  Y(M5TextColor, M5.Lcd.setTextColor(n0); DROP) \
+  Y(M5TextFgBg, M5.Lcd.setTextColor(n1, n0); DROPn(2)) \
   Y(M5update, M5.update())
