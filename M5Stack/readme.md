@@ -104,7 +104,42 @@ Draws a line from (x1, y1) to (x2, y2) in the colour specified.
 ### M5Rect
 Syntax: M5Rect (x y w h color -- )
 
-Draws a rectangle with starting corner in (x, y) of (width, height) dimensions in the colour specified.
+Draws a wireframe rectangle with starting corner in (x, y) of (width, height) dimensions in the colour specified.
+
+### M5FillRect
+Syntax: M5FillRect (x y w h color -- )
+
+Draws a filled rectangle with starting corner in (x, y) of (width, height) dimensions in the colour specified.
+
+### M5Print
+Synctax: M5Print (z -- )
+
+Draws text at the currently selected text drawing settings (foreground, background color, size, and cursor position). Use z" strings.
+
+### M5DrawStr
+Syntax: M5DrawStr (z x y f -- )
+
+Draw zero terminated string (z) at position (x, y) using font number (f).
+
+### M5DrawNum
+Syntax: M5DrawNum (n x y -- )
+
+Draw integer value (n) at position (x, y).
+
+### M5TextSize
+Syntax: M5TextSize (n -- )
+
+Set the currently active text size to n.
+
+### M5TextColor
+Syntax: M5TextColor (n -- )
+
+Set the active text color to 16-bit value n. Hint: use M5Color to turn 3 separate R, G, & B values into a packed color value.
+
+### M5TextFgBg
+Syntax: M5TextFgBg (n n -- )
+
+Similar to M5TextColor above, but allows setting of foreground and background fill color settings to text drawing routines via a pair of packed color values.
 
 ### M5Update
 Syntax: M5Update ( -- )
