@@ -12,6 +12,7 @@
   Y(SPItransfer16, SET SPI.transfer16(n0) ) \
   Y(SPIendTransaction, SPI.endTransaction()) \
   Y(SPIend, SPI.end()) \
+  Y(touchRead, SET touchRead(n0)) \
   Y(M5begin, M5.begin()) \
   Y(M5PwrBegin, M5.Power.begin()) \
   Y(M5BtnA, PUSH M5.BtnA.read()) \
@@ -30,6 +31,7 @@
   Y(M5Pixel, M5.Lcd.drawPixel((int32_t)n2, (int32_t)n1, (uint32_t)n0); DROPn(3)) \
   Y(M5Line, M5.Lcd.drawLine(n4, n3, n2, n1, n0); DROPn(5)) \
   Y(M5Rect, M5.Lcd.drawRect(n4, n3, n2, n1, n0); DROPn(5)) \
+  Y(M5FillRect, M5.Lcd.fillRect(n4, n3, n2, n1, n0); DROPn(5)) \
   Y(M5Print, M5.Lcd.print(c0); DROP) \
   Y(M5DrawStr, M5.Lcd.drawString(c3, n2, n1, n0); DROPn(4)) \
   Y(M5DrawNum, M5.Lcd.drawNumber(n2, n1, n0); DROPn(3)) \
