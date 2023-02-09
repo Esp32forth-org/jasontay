@@ -111,6 +111,16 @@ Syntax: M5FillRect (x y w h color -- )
 
 Draws a filled rectangle with starting corner in (x, y) of (width, height) dimensions in the colour specified.
 
+### M5Circle
+Syntax: M5Circle (x y r color -- )
+
+Draws a wireframe circle with center at (x, y) and radius (r) in the colour specified.
+
+### M5FillCircle
+Syntax: M5FillCircle (x y r color -- )
+
+Draws a filled circle with center at (x, y) and radius (r) in the colour specified.
+
 ### M5Print
 Synctax: M5Print (z -- )
 
