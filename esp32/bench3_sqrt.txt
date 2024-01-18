@@ -1,0 +1,33 @@
+( 16-bit Newton Raphson Fixed-Point Testing )
+
+( Fixed-Point Divide, in Q7.8 format )
+: fpmul ( n1 n2 -- n3 ) 256 */ ;
+: fpdiv ( n1 n2 -- n3 ) 256 swap */ ;
+
+( fpadd and fpsub are the same as for integers )
+
+( If needed - definition for tuck )
+: tuck swap over ;
+
+: fpsqrt ( n1 -- n2 ) dup 1 rshift 4 0 DO 2dup fpdiv + 128 fpmul LOOP swap drop ;
+: fpsqrt ( n1 -- n2 ) dup 1 rshift 4 FOR over over fpdiv + 128 fpmul NEXT swap drop ;
+
+( Or fully expanded )
+: fpsqrt ( n1 -- n2 ) dup 1 rshift 4 0 DO over over 256 swap */ + 128 256 */ LOOP ;
+
+( Generic test loop
+: BENCH ( iters -- n1 ) 0 DO 512 fpsqrt drop LOOP ;
+
+( Bench with timing for ESP32forth )
+: BENCH ( iters -- ) MS-TICKS SWAP 0 DO 512 fpsqrt drop LOOP MS-TICKS SWAP - . ." ms" ;
+: BENCH ( iters -- ) MS-TICKS SWAP FOR 512 fpsqrt drop NEXT MS-TICKS SWAP - . ." ms" ;
+
+( For Mecrisp on MKL25Z Freedom board needs delay.txt for mkl25z )
+: BENCH2 0 NVIC_ST_CURRENT_R ! 0 DO 512 fpsqrt drop LOOP NVIC_ST_CURRENT_R @ . ;
+
+( Special case for Mecrisp on MKL25Z )
+: fpmul * 8 rshift ;
+: BENCH2 0 NVIC_ST_CURRENT_R ! 0 DO 512 fpsqrt drop LOOP NVIC_ST_CURRENT_R @ . ;
+
+( Try integers )
+: BENCH3 1000 0 DO 1000 0 DO I DUP + DROP LOOP LOOP ;
