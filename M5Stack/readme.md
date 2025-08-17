@@ -5,7 +5,7 @@ This version is more appropriate if you have any M5Stack Core/Core2/Fire device 
 with using an M5Stack. This version does NOT depend on the Faces kit at all. Use of the display is central to this version, with much of the new Forth words
 added being for display support, however, it is not essential to enable the display to use these extensions.
 
-\[Update 2025/08/18\] M5 now uses a new Unified set of libraries, but [this API is based on the old M5Stack.h Arduino library,](https://github.com/m5stack/M5Stack/tree/master) so you will need to use the old APIs to make use of these vocabulary.
+\[Update 2025/08/18\] M5 now uses a new Unified set of libraries, but [this API is based on the old M5Stack.h Arduino library,](https://github.com/m5stack/M5Stack/tree/master) so you will need to use the old APIs to make use of this vocabulary.
 
 ## Prerequisites
 You must have the M5Stack boards support added to your Arduino IDE. You can find out how to do this in
